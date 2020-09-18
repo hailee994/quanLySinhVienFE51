@@ -1,0 +1,125 @@
+-->  // CÁCH 1 TẠO BẢNG BẰNG JAVASCRIPT:
+  // // tạo thẻ td để người dùng nhập vào
+  // var tdMaSV = document.createElement("td");
+  // tdMaSV.innerHTML = sinhVien.maSV;
+
+  // var tdTenSV = document.createElement("td");
+  // tdTenSV.innerHTML = sinhVien.tenSV;
+
+  // var tdEmail = document.createElement("td");
+  // tdEmail.innerHTML = sinhVien.email;
+
+  // var tdLoaiSV = document.createElement("td");
+  // tdLoaiSV.innerHTML = sinhVien.loaiSV;
+
+  // var tdDiemRL = document.createElement("td");
+  // tdDiemRL.innerHTML = sinhVien.diemRenLuyen;
+
+  // var tdDTB = document.createElement("td");
+  // tdDTB.innerHTML = sinhVien.dtb().toFixed(2);
+
+  // var tdDel = document.createElement("td");
+  // var btnDel = document.createElement("button");
+  // btnDel.className = "btn btn-danger";
+  // btnDel.innerHTML = "Xóa";
+  // tdDel.appendChild(btnDel);
+  // btnDel.onclick = function () {
+  //   // this dai dien cho nut button
+  //   this.parentElement.parentElement.remove();
+  // };
+
+  // // Tạo thẻ tr
+  // var trSV = document.createElement("tr");
+
+  // // Thêm thẻ td vào tr
+  // trSV.appendChild(tdMaSV);
+  // trSV.appendChild(tdTenSV);
+  // trSV.appendChild(tdEmail);
+  // trSV.appendChild(tdLoaiSV);
+  // trSV.appendChild(tdDiemRL);
+  // trSV.appendChild(tdDTB);
+  // trSV.appendChild(tdDel);
+
+  // var tbodySV = document.getElementById("tbSV");
+  // tbodySV.appendChild(trSV); <--
+
+
+
+
+
+  --> VALIDATION BẢNG:
+
+    var valid = true;
+
+    if (sinhVien.maSV.trim() === "") {
+    document.getElementById("err__maSV--ktRong").innerHTML =
+      "Khong duoc bo trong";
+    valid = false;
+  } else {
+    document.getElementById("err__maSV--ktRong").innerHTML = "";
+  }
+
+  if (sinhVien.tenSV.trim() === "") {
+    document.getElementById("err__tenSV--ktRong").innerHTML =
+      "Khong duoc bo trong";
+    valid = false;
+  } else {
+    document.getElementById("err__tenSV--ktRong").innerHTML = "";
+  }
+
+  if (sinhVien.email.trim() === "") {
+    document.getElementById("err__email--ktRong").innerHTML =
+      "Khong duoc bo trong";
+    valid = false;
+  } else {
+    document.getElementById("err__email--ktRong").innerHTML = "";
+  }
+
+  if (sinhVien.toan.trim() == "") {
+    document.getElementById("err__toan--ktRong").innerHTML =
+      "Khong duoc bo trong";
+    valid = false;
+  } else {
+    document.getElementById("err__toan--ktRong").innerHTML = "";
+  }
+
+  if (sinhVien.ly.trim() == "") {
+    document.getElementById("err__ly--ktRong").innerHTML =
+      "Khong duoc bo trong";
+    valid = false;
+  } else {
+    document.getElementById("err__ly--ktRong").innerHTML = "";
+  }
+
+  if (sinhVien.hoa.trim() == "") {
+    document.getElementById("err__hoa--ktRong").innerHTML =
+      "Khong duoc bo trong";
+    valid = false;
+  } else {
+    document.getElementById("err__hoa--ktRong").innerHTML = "";
+  }
+
+  if (sinhVien.diemRenLuyen.trim() == "") {
+    document.getElementById("err__renLuyen--ktRong").innerHTML =
+      "Khong duoc bo trong";
+    valid = false;
+  } else {
+    document.getElementById("err__renLuyen--ktRong").innerHTML = "";
+  }
+
+  // if (!valid) {
+  //   return;
+  // }
+
+  // kiem tra dinh dang chuoi regex
+  var letters = /^[A-Z a-z]+$/;
+  var inputString = "frontEndcyberlearn";
+
+  if (!letters.test(sinhVien.tenSV)) {
+    document.getElementById("err__tenSV--ktRong").innerHTML =
+      "Khong duoc co ky tu dac biet hoac so";
+    valid = false;
+  } else {
+    document.getElementById("err__tenSV--ktRong").innerHTML = "";
+  }
+<--

@@ -32,4 +32,9 @@ var SinhVienService = function () {
     });
     return promise;
   };
+
+  this.timKiemSinhVien = function () {
+    console.log("chuc nang tim kiem sinh vien");
+    return "";
+  };
 };
